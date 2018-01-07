@@ -150,7 +150,6 @@ function loadHeader() {
     $AllGlories.classList.remove('hidden');
     loadSocialLogos();
     loadSasaMessage();
-    loadTwitterFetcher($tfConfig);
     // loadInstafeed();
     // $sasaLogo.addEventListener("click", loadMainStageContent);
 }
@@ -181,7 +180,8 @@ function setMainStage() {
 function loadMainStageContent() {
     trace('loadMainStageContent INIT');
     $mainStage.classList.remove('hidden');
-    scLoadPlaylist($sc_NightPlaylist);
+    loadTwitterFetcher($tfConfig);
+    // scLoadPlaylist($sc_NightPlaylist);
 }
 
 function setDocSize() {
