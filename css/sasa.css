@@ -130,6 +130,11 @@ h4 {
 	filter: drop-shadow( 2px 2px 2px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow, except for the spread property */
 }
 
+.socialShadow {
+	-webkit-filter: drop-shadow( 2px 2px 2px rgba(0,0,0,0.05) );
+	filter: drop-shadow( 2px 2px 2px rgba(0,0,0,0.05) ); /* Same syntax as box-shadow, except for the spread property */
+}
+
 /*========= CUSTOMS ===========*/
 
 .nimaiContainer {
@@ -149,7 +154,7 @@ h4 {
 }
 
 #AllGlories {
-	font-size: 2.5vmin;
+	font-size: 2.0vmin;
 	padding: 5px;
 }
 
@@ -447,9 +452,9 @@ i {
 	height: 40px;
 	margin: 1px;
 	width: 40px;
-	/*box-shadow: 2px 2px 2px #888888; */
-	/*opacity: 1; */
-	/*   text-align:center; */
+	/*box-shadow: 2px 2px 2px #888888;*/
+	/*opacity: 1;*/
+	/*text-align:center;*/
 }
 
 .link i {
