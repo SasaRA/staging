@@ -238,51 +238,6 @@ h4 {
 	opacity: 1;
 }
 
-@media screen and (min-width: 200px) and (max-width: 399px) {
-	.sasaLogo {
-		height: 20px;
-		/*width: 200px;*/
-		padding: 5px;
-		background-image: url(../images/Sasa.svg);
-		background-repeat: no-repeat;
-		background-position: center;
-		margin-left: auto;
-		margin-right: auto;
-
-	}
-	#sasaMessage {
-		font-size: 8vmin;
-	}
-	/*.twitterBG {*/
-		/*font-size: 7vmin;*/
-		/*opacity: 0.15;*/
-		/*z-index: 10;*/
-	/*}*/
-	.nimaiFooterCredit {
-		font-size: 3.8vmin;
-		padding-bottom: 5px;
-	}
-}
-
-@media screen and (min-width: 400px)  and (max-width: 800px) {
-	.sasaLogo {
-		height: 122px;
-		width: 200px;
-		/*position: absolute;*/
-		background-image: url(../images/SasaRA_Logo.svg);
-		background-repeat: no-repeat;
-		background-position: center;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	#sasaMessage {
-		font-size: 6.5vmin;
-	}
-	.nimaiFooterCredit {
-		font-size: 2.4vmin;
-		padding-bottom: 5px;
-	}
-}
 
 #mainStage {
 	background-color: rgba(255,255,255,0.4);
@@ -327,27 +282,6 @@ h4 {
 }
 
 
-@media screen and (min-width: 200px) and (max-width: 399px) {
-	.mainContainer {
-		margin: 10px;
-		width: 95%
-	}
-}
-
-@media screen and (min-width: 400px) and (max-width: 799px) {
-	.mainContainer {
-		width:95%;
-		margin: 10px 8%;
-
-	}
-}
-
-@media screen and (min-width: 800px) {
-	.mainContainer {
-		width: 90%
-		margin: 10px 12%;
-	}
-}
 
 /*========= SOCIAL LOGOS ===========*/
 
@@ -414,138 +348,109 @@ i {
 	color: black;
 }
 
+
+
+/*===================================================
+
+=====================================================*/
+
+@media screen and (min-width: 200px) and (max-width: 399px) {
+    .sasaLogo {
+        height: 20px;
+        /*width: 200px;*/
+        padding: 5px;
+        background-image: url(../images/Sasa.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    #sasaMessage {
+        font-size: 8vmin;
+    }
+    /*.twitterBG {*/
+    /*font-size: 7vmin;*/
+    /*opacity: 0.15;*/
+    /*z-index: 10;*/
+    /*}*/
+    .nimaiFooterCredit {
+        font-size: 3.8vmin;
+        padding-bottom: 5px;
+    }
+}
+
+
+
+@media screen and (min-width: 400px)  and (max-width: 800px) {
+    .sasaLogo {
+        height: 122px;
+        width: 200px;
+        /*position: absolute;*/
+        background-image: url(../images/SasaRA_Logo.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #sasaMessage {
+        font-size: 6.5vmin;
+    }
+    .nimaiFooterCredit {
+        font-size: 2.4vmin;
+        padding-bottom: 5px;
+    }
+}
+
+
+@media screen and (min-width: 200px) and (max-width: 399px) {
+    .mainContainer {
+        margin: 10px;
+        width: 95%
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 799px) {
+    .mainContainer {
+        width:95%;
+        margin: 10px 8%;
+
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .mainContainer {
+        width: 90%
+        margin: 10px 12%;
+    }
+}
+
+
 @media screen and (min-width: 601px) {
-	#socialLogos {
-		position: relative;
-		padding: 10px;
-		/*width: 566px;*/
-		/*margin-left: auto;*/
-		/*margin-right: auto;*/
-	}
+    #socialLogos {
+        position: relative;
+        padding: 10px;
+        /*width: 566px;*/
+        /*margin-left: auto;*/
+        /*margin-right: auto;*/
+    }
 }
 
 @media screen and (min-width: 200px) and (max-width: 600px) {
-	#socialLogos {
-		position: relative;
-		padding: 5px;
-		width: 282px;
-		/*margin-left: auto;*/
-		/*margin-right: auto;*/
-	}
+    #socialLogos {
+        position: relative;
+        padding: 5px;
+        width: 282px;
+        /*margin-left: auto;*/
+        /*margin-right: auto;*/
+    }
 
-	#AllGlories {
-		font-size: 2.7vmin;
-		padding: 5px;
-	}
+    #AllGlories {
+        font-size: 2.7vmin;
+        padding: 5px;
+    }
 
-	.sasaFooterCredit {
-		font-size: 3.5vmin;
-	}
+    .sasaFooterCredit {
+        font-size: 3.5vmin;
+    }
 }
-
-/*.link {*/
-	/*background-position: 50% 0;*/
-	/*cursor: pointer;*/
-	/*display: inline-block;*/
-	/*height: 39px;*/
-	/*margin: 0 1px;*/
-	/*width: 39px;*/
-	/*!*box-shadow: 2px 2px 1px #888888;*!*/
-	/*opacity: 1;*/
-/*}*/
-
-/*.link:hover {*/
-	/*background-position: 50% 100%;*/
-/*}*/
-
-/*.link.soundcloud {background-image: url(../images/links/icon_soundcloud.png);}*/
-
-/*.link.reverbnation {background-image: url(../images/links/icon_reverbnation.png);}*/
-
-/*.link.facebook {background-image: url(../images/links/icon_facebook.png);}*/
-
-/*.link.plus {background-image: url(../images/links/icon_plus.png);}*/
-
-/*.link.twitter {background-image: url(../images/links/icon_twitter.png);}*/
-
-/*.link.youtube {background-image: url(../images/links/icon_youtube.png);}*/
-
-/*.link.grooveshark {background-image: url(../images/links/icon_grooveshark.png);}*/
-
-/*.link.instagram {background-image: url(../images/links/icon_instagram.png);}*/
-
-/*.link.myspace {background-image: url(../images/links/icon_myspace.png);}*/
-
-/*.link.pinterest {background-image: url(../images/links/icon_pinterest.png);}*/
-
-/*.link.mail {background-image: url(../images/links/icon_mail.png);}*/
-
-/*.link.github {background-image: url(../images/links/icon_github.png);}*/
-
-/*.link.linkedin {background-image: url(../images/links/icon_linkedin.png);}*/
-
-/*.link.codepen {background-image: url(../images/links/icon_codepen.png);}*/
-
-/*.link.medium {background-image: url(../images/links/icon_medium.png);}*/
-
-
-
-
-/*====================================*/
-/*FULL BACKGROUND SLIDE SHOW*/
-/*====================================*/
-
-
-#slideshow{
-	height: 100vh;
-	position: relative;
-	text-align: center;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
-	-webkit-flex-direction: column;
-	flex-direction: column;
-	overflow: hidden;
-	z-index: -1;
-}
-
-.slide{
-	position: absolute;
-	width: 670px;
-	height: 420px;
-	top: 42px;
-	left: 116px;
-	overflow: hidden;
-}
-.bg-image {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-position: 50% 50%;
-	z-index: -1;
-	transform: scale(1.1);
-
-}
-.bg-active {
-	transform: scale(1);
-	opacity:0.5;
-}
-
-/*#slideshow .bg-image  {*/
-/*opacity:0.5;*/
-/*}*/
-
-/*=======================*/
