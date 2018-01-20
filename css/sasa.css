@@ -245,12 +245,8 @@ h4 {
 	-webkit-border-radius: 10px;
 	border-radius: 10px; /* future proofing */
 	-khtml-border-radius: 10px; /* for old Konqueror browsers */
-	/*height:400px;*/
 	width:100%;
-	/*margin-left:auto;*/
-	/*margin-right:auto;*/
 	overflow: hidden;
-	/*min-height:520px !important;*/
 }
 
 .specialMessage {
@@ -263,7 +259,6 @@ h4 {
 	width: 160px;
 	/*padding: 10px;*/
 	background-image: url(../images/HeartcoreMusic.svg);
-	/*background-image: url(../images/HeartCore_Media_160x88.png);*/
 	background-repeat: no-repeat;
 	background-position: center center;
 	margin-left: auto;
@@ -285,24 +280,10 @@ h4 {
 
 /*========= SOCIAL LOGOS ===========*/
 
-/*.socialLogos {*/
-	/*position: relative;*/
-	/*padding: 5px;*/
-	/*!*width: 550px;*!*/
-	/*margin-left: auto;*/
-	/*margin-right: auto;*/
-/*}*/
-
 #socialLogos {
-	/*   background-color: rgba(0,0,0,0.6); */
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	/* 	background-position: 50% 0; */
-	/* 	border: solid rgba(255,255,255,0.5) 3px; */
-	/*   border-radius:50%; */
-	/*   display: inline-block; */
-	/* position: relative; */
 	padding: 4px;
 	margin-left: auto;
 	margin-right: auto;
@@ -329,9 +310,6 @@ i {
 	height: 40px;
 	margin: 1px;
 	width: 40px;
-	/*box-shadow: 2px 2px 2px #888888;*/
-	/*opacity: 1;*/
-	/*text-align:center;*/
 }
 
 .link i {
@@ -355,9 +333,26 @@ i {
 =====================================================*/
 
 @media screen and (min-width: 200px) and (max-width: 399px) {
+    .mainContainer {
+        margin: 10px;
+        width: 95%
+    }
+    #socialLogos {
+        position: relative;
+        padding: 5px;
+        max-width: 230px;
+    }
+
+    #AllGlories {
+        font-size: 3vmin;
+        padding: 5px;
+    }
+
+    .sasaFooterCredit {
+        font-size: 3.5vmin;
+    }
     .sasaLogo {
         height: 20px;
-        /*width: 200px;*/
         padding: 5px;
         background-image: url(../images/Sasa.svg);
         background-repeat: no-repeat;
@@ -369,20 +364,31 @@ i {
     #sasaMessage {
         font-size: 8vmin;
     }
-    /*.twitterBG {*/
-    /*font-size: 7vmin;*/
-    /*opacity: 0.15;*/
-    /*z-index: 10;*/
-    /*}*/
+
+    #heartcoreLogo {
+        height: 80px;
+        width: 140px;
+        /* padding: 10px; */
+        background-image: url(../images/HeartcoreMusic.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px;
+
+
     .nimaiFooterCredit {
-        font-size: 3.8vmin;
+        font-size: 3.2vmin !important;
         padding-bottom: 5px;
     }
 }
 
+@media screen and (min-width: 400px) and (max-width: 799px) {
+    .mainContainer {
+        width:95%;
+        margin: 10px 8%;
 
-
-@media screen and (min-width: 400px)  and (max-width: 800px) {
+    }
     .sasaLogo {
         height: 122px;
         width: 200px;
@@ -402,55 +408,13 @@ i {
     }
 }
 
-
-@media screen and (min-width: 200px) and (max-width: 399px) {
-    .mainContainer {
-        margin: 10px;
-        width: 95%
-    }
-}
-
-@media screen and (min-width: 400px) and (max-width: 799px) {
-    .mainContainer {
-        width:95%;
-        margin: 10px 8%;
-
-    }
-}
-
 @media screen and (min-width: 800px) {
     .mainContainer {
         width: 90%
         margin: 10px 12%;
     }
-}
-
-
-@media screen and (min-width: 601px) {
     #socialLogos {
         position: relative;
         padding: 10px;
-        /*width: 566px;*/
-        /*margin-left: auto;*/
-        /*margin-right: auto;*/
-    }
-}
-
-@media screen and (min-width: 200px) and (max-width: 600px) {
-    #socialLogos {
-        position: relative;
-        padding: 5px;
-        width: 282px;
-        /*margin-left: auto;*/
-        /*margin-right: auto;*/
-    }
-
-    #AllGlories {
-        font-size: 2.7vmin;
-        padding: 5px;
-    }
-
-    .sasaFooterCredit {
-        font-size: 3.5vmin;
     }
 }
