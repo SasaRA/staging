@@ -1,6 +1,5 @@
-var $debug = true;
 
-TweenLite.defaultEase = Expo.easeOut;
+
 
 var $sasaMessageList = [
     'LOVE REIGNS SUPREME',
@@ -99,42 +98,42 @@ window.onresize = function (event) {
     resizeTimer = setTimeout(setDocSize(), 200);
 };
 
-// trace for consistent console logging
-function trace(value) {
-    if ($debug == true) {
-        console.log('<<< ', value, ' >>>')
-    }
-}
+// // trace for consistent console logging
+// function trace(value) {
+//     if ($debug == true) {
+//         console.log('<<< ', value, ' >>>')
+//     }
+// }
 
 
 function init() {
     trace('js INIT');
-    setScrollReveal();
+    // setScrollReveal();
     setDocSize();
     loadContent();
 
 }
 
-function setScrollReveal() {
-    // Initialize and Configure Scroll Reveal Animation
-    window.sr = ScrollReveal();
-    sr.reveal('.sr_header', {
-        duration: 600,
-        scale: 0.9,
-        distance: '0px'
-    }, 200);
-    sr.reveal('.link', {
-        duration: 50,
-        scale: 0.9,
-        distance: '0px'
-    }, 20);
-    sr.reveal('.sr_footer', {
-        duration: 600,
-        scale: 0.8,
-        distance: '0px'
-    }, 200);
-
-}
+// function setScrollReveal() {
+//     // Initialize and Configure Scroll Reveal Animation
+//     window.sr = ScrollReveal();
+//     sr.reveal('.sr_header', {
+//         duration: 600,
+//         scale: 0.9,
+//         distance: '0px'
+//     }, 200);
+//     sr.reveal('.link', {
+//         duration: 50,
+//         scale: 0.9,
+//         distance: '0px'
+//     }, 20);
+//     sr.reveal('.sr_footer', {
+//         duration: 600,
+//         scale: 0.8,
+//         distance: '0px'
+//     }, 200);
+//
+// }
 
 function loadContent() {
     trace('loadContent INIT');
@@ -149,7 +148,7 @@ function loadHeader() {
     $nimaiHeader.classList.remove('hidden');
     $AllGlories.classList.remove('hidden');
     loadSocialLogos();
-    loadSasaMessage();
+    // loadSasaMessage();
     // loadInstafeed();
     // $sasaLogo.addEventListener("click", loadMainStageContent);
 }
@@ -735,4 +734,3 @@ function screenResize() {
 }
 
 window.addEventListener('load', init);
-
