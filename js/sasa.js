@@ -57,9 +57,9 @@ var $nimaiOverlay = document.getElementById('nimaiOverlay'),
 
 var $socialList = [
     'soundcloud'
+    ,'instagram'
     ,'twitter'
     ,'youtube'
-    ,'instagram'
     ,'facebook'
     ,'linkedin'
     ,'github'
