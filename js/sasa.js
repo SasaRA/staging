@@ -61,16 +61,16 @@ var $socialList = [
     ,'twitter'
     ,'youtube'
     ,'facebook'
+    ,'linkedin'
     ,'github'
     ,'codepen'
-    //,'linkedin'
+    ,'paypal'
     // ,'reverbnation'
     // ,'pinterest'
     // ,'tumblr'
     // ,'medium'
     //,'patreon'
     //,'parler'
-    // ,'paypal'
     // *** email link is auto added on load *** //
 ];
 
