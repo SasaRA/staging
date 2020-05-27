@@ -152,8 +152,8 @@ function buildMainTL(d,t) {
     $mainTL = new TimelineLite({paused:true});
 
     $mainTL
-        .timeScale(t)
         .delay(d)
+        .timeScale(t)
         .add(loadSasaMsgTL(), 'sasaMsg')
         .add(loadHeadFootTL(), 'headFoot')
         .add(loadSocialTL(0.7), 'social')
