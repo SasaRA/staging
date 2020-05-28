@@ -195,7 +195,7 @@ h4 {
 }
 
 #AllGlories {
-	font-size: 2.5vmin;
+	font-size: 2.2vmin;
 	padding: 5px;
 	z-index: 7000;
 	white-space: nowrap;
@@ -927,11 +927,23 @@ h4 {
 .soundcloudPlayer {
 	padding: 5px;
 	/*position: relative;*/
-	opacity: 0.75;
+	opacity: 0.90;
+    
+}
+
+.soundcloudPlayer iframe {
+	padding: 5px;
+	/*position: relative;*/
+	opacity: 0.90;
+    -webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-ms-border-radius: 12px;
+	-o-border-radius: 12px;
+	border-radius: 12px;
 }
 
 .soundcloudPlayer:hover {
-	opacity: 0.90;
+	opacity: 1.0;
 }
 
 #scSwiper .swiperContainer {

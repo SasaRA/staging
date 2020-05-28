@@ -9,7 +9,9 @@ var $debug = false,
 
 var $defaultEase = "Expo.easeOut";
 
-var $sc_NightPlaylist = '<iframe id="scPlaylist" width="100%" height="163" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/3416309&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>';
+var $sc_NightPlaylist = '<iframe id="scPlaylist" width="90%" height="300px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/3416309&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>';
+
+var $sc_Contract = '<iframe id="scPlaylist" width="90%" height="300px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/572970957&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>';
 
 var $sasaMessageList = [
     'LOVE REIGNS SUPREME',
@@ -57,8 +59,8 @@ var $nimaiOverlay = document.getElementById('nimaiOverlay'),
 
 var $socialList = [
     'soundcloud'
-    ,'instagram'
     ,'twitter'
+    ,'instagram'
     ,'youtube'
     ,'facebook'
     ,'linkedin'
@@ -143,6 +145,8 @@ function start() {
     // preloadTwitterFetcher($tfConfig);
     buildMainTL(0.5,1.8);
     loadListeners();
+    
+    
     // slideShow("intro-bg",10,1.3,1.0,0);
 }
 
@@ -157,9 +161,12 @@ function buildMainTL(d,t) {
         .add(loadSasaMsgTL(), 'sasaMsg')
         .add(loadHeadFootTL(), 'headFoot')
         .add(loadSocialTL(0.7), 'social')
+        // .add(showAllGlories(), '+=2')
+        // .add(showNimaiCredits(), '+=2.5')
         // .add(loadTwitterTL(0.3), 'twitter')
         // .add(loadTwitterTL(0.3), '+=2')
-        // .call(mainStagerize,[],this,'+=2')
+        .call(mainStagerize,[],this,'+=2')
+    
     ;
 
     if ($playIntro === true) {
@@ -180,7 +187,7 @@ function loadSasaMessage() {
 }
 
 function loadListeners() {
-    // $sasaLogo.addEventListener("click", mainStagerize);
+     $sasaLogo.addEventListener("click", mainStagerize);
     // $sasaLogo.addEventListener("mouseover", socialize);
     // $heartcoreLogo.addEventListener("mouseover", twitterize);
     // $heartcoreLogo.addEventListener("click", socialize);
@@ -285,7 +292,7 @@ function showAllGlories() {
 
     tl = new TimelineLite({paused:true});
     tl
-        .from($AllGlories,0.5,{y:5},'+=0.25')
+        .from($AllGlories,1,{y:5},'+=0.25')
     ;
     $AllGlories.classList.remove('hidden');
     tl.play();
@@ -295,7 +302,7 @@ function showNimaiCredits() {
 
     tl = new TimelineLite({paused:true});
     tl
-        .staggerFrom($nimaiFooterCredit,0.5,{y:-5,opacity: 0},0.2,'-=0.5')
+        .staggerFrom($nimaiFooterCredit,1,{y:-5,opacity: 0},0.2,'-=0.5')
     ;
     $nimaiFooterCredits.classList.remove('hidden');
     tl.play();
@@ -472,15 +479,17 @@ function loadMainStageContent() {
     trace('loadMainStageContent INIT');
     showAllGlories();
     showNimaiCredits();
-    // $sasaMessage.classList.remove('animate');
-    // $sasaMessage.classList.remove('hidden');
+    
+    $sasaMessage.classList.remove('animate');
+    $sasaMessage.classList.remove('hidden');
+    
     $mainStage.classList.remove('hidden');
     $mainContainer.classList.remove('centered');
 
     // TweenMax.set($socialLogos,{height:'auto'});
     // TweenMax.set($twitterFeed,{height:'auto'});
     // loadTwitterFetcher($tfConfig);
-    scLoadPlaylist($sc_NightPlaylist);
+    scLoadPlaylist($sc_Contract);
 
     // loadStorePromo();
 }
@@ -667,243 +676,4 @@ var GSAP = {
     };
 
 window.addEventListener('load', init);
-
-
-
-// ========================================
-//     ARCHIVED VARIABLES
-// ========================================
-
-// var $instaSlides = 4;
-
-// var mySwiper;
-//
-// var $scPlayer = document.getElementById('scPlayer'),
-//     $scSwiper = document.getElementById('scSwiper'),
-//     $scSwiperWrapper = document.getElementById('scSwiperWrapper');
-//
-// var $scTrackA = document.getElementById('scTrackA'),
-//     $scTrackB = document.getElementById('scTrackB'),
-//     $scExciteMoneyIframe = '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/76063308&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>',
-//     $scWeBelieveIframe = '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/76020624&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>';
-//
-// var $swiperContainer = document.getElementsByClassName('swiperContainer');
-//
-// var $sc_ID = 1796918, //SASA HASID RA SOUNDCLOUD USER ID #
-//     $sc_NightPlaylist = '<iframe id="scPlaylist" width="100%" height="500" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/3416309&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>';
-//
-// var $sc_BabyBoy = 165546030,
-//     $sc_OneThing = 125842224,
-//     $sc_EveryBodyDies = 83457472,
-//     $sc_AngelChild = 77178318,
-//     $sc_ExciteMoney = 76063308,
-//     $sc_WeBelieve = 76020624,
-//     $sc_Nightmerikkkana = 76012806,
-//     $sc_FEAR = 75987437;
-
-// ========================================
-//     ARCHIVED FUNCTIONS
-// ========================================
-
-// var resizeTimer;
-//
-// window.onresize = function (event) {
-//     clearTimeout(resizeTimer);
-//     resizeTimer = setTimeout(setDocSize(), 200);
-// };
-
-
-
-// function scLoadPlaylist(playlist) {
-//     trace('scLoadPlaylist INIT');
-//     $scPlayer.classList.remove('hidden');
-//     TweenMax.set($scPlayer,{height:0,opacity:0});
-//     GSAP.insertHTML($scPlayer, playlist);
-//
-//     tl = new TimelineLite({paused:true});
-//     tl
-//         .to($scPlayer,0.2,{height:163})
-//         .to($scPlayer,0.5,{opacity:1})
-//     ;
-//     tl.play();
-//     $scPlayer.addEventListener("mouseover", scPlaylistOpen);
-// }
-//
-// function scPlaylistOpen() {
-//     // if ($firstTime = true) {
-//     //     trace('scPlaylistOpen INIT');
-//     //     TweenMax.to($scPlayer, 1, {height: 500});
-//     //     $firstTime = false;
-//     //     trace('$firstTime = ' + $firstTime);
-//     // }
-//     TweenMax.to($scPlayer, 1, {height: 500});
-// }
-//
-// function scPlaylistClose() {
-//     trace('scPlaylistClose INIT');
-//     TweenMax.to(scPlaylist, 1, {height: 163});
-// }
-
-// function loadLinkListeners(s) {
-//     trace('loadLinkListeners LOADED');
-//
-//     aTags = document.getElementsByClassName('link');
-//
-//     for (var i=0;i<aTags.length;i++){
-//         addEventListener.call(aTags[i],'mouseover',socialLinkOver);
-//         addEventListener.call(aTags[i],'mouseout',socialLinkOut);
-//     }
-// }
-
-// function playSasaMessage(msgDuration) {
-//     trace('playSasaMessage INIT');
-//
-//     $sasaMessage.classList.add('animate');
-//     $nimaiOverlay.classList.remove('hidden');
-//     $sasaMessage.classList.remove('hidden');
-//
-//     // duration = ('+="' + msgDuration + '"');
-//
-//     tl = new TimelineLite({paused:true});
-//
-//     tl
-//     // .to($nimaiOverlay, 0.01, {zIndex: 5000, opacity: 1})
-//         .to($sasaMessage, 0.01, {zIndex: 5100})
-//         .to($sasaMessage, 0.01, {xPercent: -50, yPercent: -50})
-//         .to($sasaMessage, 0.01, {left: "50%", top: "50%"})
-//         .to($sasaMessage, 0.5, {opacity: 1, scale: 1.5})
-//         .to($nimaiOverlay, 3, {zIndex: 1, opacity: 1})
-//         .to($sasaMessage, 1.2, {opacity: 0, scale: 0.6}, '-=2')
-//         .to($sasaMessage, 4, {top: '30%'}, '-=2')
-//         // .to($nimaiOverlay, 1, {zIndex: 1, opacity: 0})
-//         .call(endSasaMessage,[],this,'-=3.2')
-//     ;
-//
-//     tl.play();
-//     // tl.kill(null,$sasaMessage);
-// }
-
-// function endSasaMessage() {
-//     trace('endSasaMessage INIT');
-//
-//
-//     TweenMax.to($nimaiOverlay, 1, {zIndex: 1, opacity: 0, onComplete: function() {
-//         loadHeadFoot();
-//         TweenMax.set($sasaMessage, {clearProps: "all"});
-//         $nimaiOverlay.classList.add('hidden');
-//     }});
-//     // TweenMax.set($sasaMessage, {display: "none"});
-//
-//     // $sasaMessage.classList.add('hidden');
-//     // $sasaMessage.classList.remove('animate');
-//
-//     // loadContent();
-// }
-
-// function loadHeadFoot() {
-//     trace('loadHeadFoot INIT');
-//
-//     time = 0.3;
-//
-//     TweenMax.set($sasaLogo,{opacity:0});
-//     TweenMax.set($heartcoreLogo,{opacity:0});
-//
-//     tl = new TimelineLite({paused:true});
-//     tl
-//         .add('start',0)
-//         .add('step2',0.05)
-//         .to($sasaLogo, time, {opacity: 1}, 'start')
-//         .to($heartcoreLogo, time, {opacity: 1}, 'start')
-//         .from($sasaLogo, time, {scale:0.3,y:-150},'step2')
-//         .from($heartcoreLogo, time, {scale:0.3,y:150},'step2')
-//         .call(socialize,[],this,'+=0.5')
-//     // .call(showAllGlories,[],this,'+=0.4')
-//     // .call(showNimaiCredits,[],this,'+=0.4')
-//     // .call(twitterize)
-//     // .from($AllGlories,0.5,{y:5,opacity:0},'+=0.25')
-//     // .staggerFrom($nimaiFooterCredit,0.5,{y:-5,opacity: 0},0.2,'-=0.5')
-//     ;
-//
-//     tl.play();
-//
-//     $nimaiHeader.classList.remove('hidden');
-//     $nimaiFooter.classList.remove('hidden');
-//     $sasaLogo.classList.remove('hidden');
-//     $heartcoreLogo.classList.remove('hidden');
-//     // preloadTwitterFetcher($tfConfig);
-//
-// }
-
-// function loadSocialLogos() {
-//     trace('loadSocialLogos INIT');
-//
-//     // loadLinkListeners($socialList);
-//
-//     $socialLogos.classList.remove('hidden');
-//
-//     tl = new TimelineLite();
-//     tl
-//         .set($link, {opacity: 1})
-//         .set($socialLogos,{height:'auto'})
-//         .from($socialLogos,0.3,{height:0})
-//         .staggerFrom($link, 0.2, {y: +10, opacity: 0}, 0.035)
-//         .staggerTo($link,0.2,{scale:0.85}, -0.035)
-//         .call(twitterize,[],this,'+=0.7')
-//     ;
-//
-// }
-
-// function loadTwitterFetcher() {
-//     trace('loadTwitterFetcher INIT');
-//
-//     $twitterFeed.classList.remove('hidden');
-//
-//     tl = new TimelineLite({paused:true});
-//     tl
-//         .set($twitterFeed,{height:'auto'})
-//         .from($twitterFeed,0.3,{height:0, opacity:0, scaleY:0.5})
-//     ;
-//     tl.play();
-//
-//     // loadMainStageContent();
-// }
-
-// function loadContent() {
-//     trace('loadContent INIT');
-//
-//     tl = new TimelineLite({paused:true});
-//
-//     if ($playIntro === true) {
-//         tl
-//             .call(loadSasaMessage,[],this,'-=0')
-//             .call(preloadTwitterFetcher,[$tfConfig],this,'-=0')
-//         ;
-//     } else {
-//         tl
-//             .call(preloadTwitterFetcher,[$tfConfig],this,'-=0')
-//             .call(loadHeadFoot,[],this,'-=0')
-//         ;
-//     }
-//
-//     tl.play();
-// }
-
-// function pushSocialArray(e) {
-//
-//     for (i = 0; i < ($socialLogos.childNodes.length - 1);i++)
-//     {
-//         linkCurrent = ("$" + $socialLogos.childNodes[i].id );
-//
-//         trace("$socialLogos.childNodes[i].id = " + linkCurrent);
-//
-//         $socialArray.push(linkCurrent);
-//     }
-//
-//     $socialArray.push('$link_mail');
-//
-//     trace("$socialArray = " + $socialArray);
-//
-// }
-
-
 
