@@ -3,7 +3,7 @@
 //////////////////////////
 
 
-var $debug = false,
+var $debug = true,
     $firstTime = true;
     $playIntro = true;
 
