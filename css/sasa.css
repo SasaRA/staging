@@ -292,6 +292,8 @@ h4 {
 
 .sasaLogo {
 	padding: 5px;
+	height: 122px;
+	width: 200px;
 	background-image: url(../images/SasaRA_Logo.svg);
 	background-repeat: no-repeat;
 	background-position: center center;
