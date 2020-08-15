@@ -301,6 +301,17 @@ h4 {
 	margin-right: auto;
 }
 
+.sasaLogoIntro {
+	padding: 5px;
+	height: 122px; !important;
+	width: 200px; !important;
+	background-image: url(../images/SasaRA_Logo.svg); !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #sasaBgImage {
 	/* Set rules to fill background */
 	min-height: 100%;

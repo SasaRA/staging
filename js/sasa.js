@@ -232,6 +232,8 @@ function loadHeadFootTL() {
         .set($sasaMessage, {className: '-=animate'})
         .set($nimaiHeader, {className: '-=hidden'})
         .set($nimaiFooter, {className: '-=hidden'})
+        .set($sasaLogo, {className: '-=sasaLogo'})
+        .set($sasaLogo, {className: '+=sasaLogoIntro'})
         .set($sasaLogo, {className: '-=hidden'})
         .set($heartcoreLogo, {className: '-=hidden'})
         .set($sasaLogo,{opacity:0})
@@ -243,7 +245,13 @@ function loadHeadFootTL() {
         .from($sasaLogo, time, {scale:0.3,y:-150},'hf_1')
         .from($heartcoreLogo, time, {scale:0.3,y:150},'hf_1')
         .addPause(2)
-        ;
+        // .set($sasaLogo, {className: '-=sasaLogoIntro'})
+        // .set($sasaLogo, {className: '+=sasaLogo'})
+
+    ;
+
+    // $sasaLogo.classList.remove("sasaLogoIntro");
+    // $sasaLogo.classList.add("sasaLogo");
 
     return tl;
 
@@ -479,7 +487,10 @@ function loadMainStageContent() {
     trace('loadMainStageContent INIT');
     showAllGlories();
     showNimaiCredits();
-    
+
+    $sasaLogo.classList.remove("sasaLogoIntro");
+    $sasaLogo.classList.add("sasaLogo");
+
     $sasaMessage.classList.remove('animate');
     $sasaMessage.classList.remove('hidden');
     
