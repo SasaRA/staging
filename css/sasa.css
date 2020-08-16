@@ -428,8 +428,8 @@ h4 {
 		/*margin-bottom:10px;*/
 	}
 	.nimaiFooterCredit {
-		font-size: 2vmin;
-		padding-bottom: 5px;
+		font-size: 3vmin;
+		padding: 5px;
 	}
 }
 
@@ -545,7 +545,7 @@ h4 {
 	}
 
 	#AllGlories {
-		font-size: 2vmin;
+		font-size: 2.7vmin;
 		padding: 5px;
 	}
 
