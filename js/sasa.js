@@ -3,7 +3,7 @@
 //////////////////////////
 
 
-var $debug = true,
+var $debug = false,
     $firstTime = true;
     $playIntro = true;
 
@@ -135,9 +135,9 @@ function trace(value) {
 
 function init() {
     trace('init');
+    loadJS($jsLinks);
     loadSasaMessage();
     loadSocial($socialList);
-    loadJS($jsLinks);
 }
 
 function start() {
@@ -270,7 +270,7 @@ function loadSocialTL(d) {
         .set($socialLogos,{height:'auto'})
         .from($socialLogos,0.3,{height:0})
         .staggerFrom($link, 0.2, {y: +10, opacity: 0}, 0.035)
-        .staggerTo($link,0.2,{scale:0.85}, -0.035)
+        .staggerTo($link,0.2,{scale:1.00}, -0.035)
         .addPause(2)
     ;
 
@@ -394,12 +394,12 @@ function loadSocial(s) {
 
 function socialLinkOver(l) {
     // trace('mouseover');
-    TweenMax.to(this,0.1,{scale:1.1});
+    TweenMax.to(this,0.1,{scale:1.2});
 }
 
 function socialLinkOut() {
     // trace('$link mouseout');
-    TweenMax.to(this,0.1,{scale:0.85});
+    TweenMax.to(this,0.1,{scale:1.00});
 }
 
 function preloadTwitterFetcher(config) {
@@ -491,7 +491,7 @@ function loadMainStageContent() {
     $sasaLogo.classList.remove("sasaLogoIntro");
     $sasaLogo.classList.add("sasaLogo");
 
-    $sasaMessage.classList.remove('animate');
+    // $sasaMessage.classList.remove('animate');
     $sasaMessage.classList.remove('hidden');
     
     $mainStage.classList.remove('hidden');
