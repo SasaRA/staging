@@ -3,7 +3,7 @@
 //////////////////////////
 
 
-var $debug = false,
+var $debug = true,
     $firstTime = true;
     $playIntro = true;
 
@@ -26,8 +26,10 @@ var $sasaMessageList = [
 ];
 
 var $jsLinks = [
-    'js/TweenMax.min.js'
-    ,'js/twitterFetcher_min.js'
+    'js/TweenMax.min.js',
+    'js/bg_slideshow.js'
+
+    // ,'js/twitterFetcher_min.js'
     // ,'js/scrollreveal.min.js'
 ];
 
@@ -133,21 +135,34 @@ function trace(value) {
     }
 }
 
-function init() {
-    trace('init');
+function preInit() {
+    trace('preInit');
     loadJS($jsLinks);
     loadSasaMessage();
     loadSocial($socialList);
+
+}
+
+function init() {
+    trace('init');
+
+
+
+    start();
+
 }
 
 function start() {
     trace('start');
     // preloadTwitterFetcher($tfConfig);
-    buildMainTL(0.5,1.8);
+
+    // scLoadPlaylist($sc_Contract);
+
+    buildMainTL(0.5,2.0);
     loadListeners();
-    
-    
-    // slideShow("intro-bg",10,1.3,1.0,0);
+
+
+    slideShow("intro-bg",10,1.3,1.0,0);
 }
 
 function buildMainTL(d,t) {
@@ -165,7 +180,8 @@ function buildMainTL(d,t) {
         // .add(showNimaiCredits(), '+=2.5')
         // .add(loadTwitterTL(0.3), 'twitter')
         // .add(loadTwitterTL(0.3), '+=2')
-        .call(mainStagerize,[],this,'+=2')
+    
+        // .call(mainStagerize,[],this,'+=2')
     
     ;
 
@@ -415,50 +431,7 @@ function loadStorePromo() {
     GSAP.insertHTML($scTrackB, $scWeBelieveIframe);
 }
 
-// ====================================
-//     FULL BACKGROUND SLIDE SHOW
-//     VANILLA JS & GSAP
-//     Example Call:
-//     slideShow("intro-bg",10,1.3,0.5,0);
-// ====================================
 
-
-var $slides;
-// var $slides = document.getElementsByClassName("intro-bg"); //slides
-var currentSlide = 0; //keep track on the current slide
-var stayTime; //time the slide stays
-var slideTime; //fade in / fade out time
-var alphaSet;
-
-function slideShow(slideClass,sTime,tTime,alpha,current) {
-    $slides = document.getElementsByClassName(slideClass); //slides
-    currentSlide = current; //keep track on the current slide
-    stayTime = sTime; //time the slide stays
-    slideTime = tTime; //fade in / fade out time
-    alphaSet = alpha;
-
-    TweenLite.set($slides, {autoAlpha:0, onComplete: function(){
-        TweenLite.to($slides[currentSlide],(slideTime*2), {autoAlpha:alphaSet});	//show first image
-        TweenLite.delayedCall(stayTime, nextSlide); //start the slideshow
-    }});	//hide all images
-
-}
-function nextSlide() {
-    TweenLite.to($slides[currentSlide], slideTime, {
-        autoAlpha: 0,
-        className: "-=bg-active"
-    }); //fade out the old slide
-    currentSlide = ++currentSlide % $slides.length; //find out which is the next slide
-    TweenLite.to($slides[currentSlide], slideTime, {
-        autoAlpha: alphaSet,
-        className: "+=bg-active"
-    }); //fade in the next slide
-    TweenLite.delayedCall(stayTime, nextSlide); //wait a couple of seconds before next slide
-}
-
-// ==========================================
-//     END FULL BACKGROUND SLIDE SHOW
-// ==========================================
 
 var $igBg01 = "https://instagram.fsnc1-4.fna.fbcdn.net/t51.2885-15/e35/17662439_342625969468558_7500373359771779072_n.jpg";
 var $igBg02 = "https://instagram.fsnc1-4.fna.fbcdn.net/t51.2885-15/e35/13355439_553003784901766_2013074610_n.jpg";
@@ -488,6 +461,8 @@ function loadMainStageContent() {
     showAllGlories();
     showNimaiCredits();
 
+    // scLoadPlaylist($sc_Contract);
+
     $sasaLogo.classList.remove("sasaLogoIntro");
     $sasaLogo.classList.add("sasaLogo");
 
@@ -497,12 +472,6 @@ function loadMainStageContent() {
     $mainStage.classList.remove('hidden');
     $mainContainer.classList.remove('centered');
 
-    // TweenMax.set($socialLogos,{height:'auto'});
-    // TweenMax.set($twitterFeed,{height:'auto'});
-    // loadTwitterFetcher($tfConfig);
-    scLoadPlaylist($sc_Contract);
-
-    // loadStorePromo();
 }
 
 function setMainStage() {
@@ -551,7 +520,7 @@ function setDocSize() {
 function loadJS(link) {
     loadScripts(link,function(){
         trace('Scripts loaded');
-        start();
+        init();
     });
 }
 
@@ -686,5 +655,5 @@ var GSAP = {
         }
     };
 
-window.addEventListener('load', init);
+window.addEventListener('load', preInit);
 
